@@ -26,4 +26,9 @@ public class Manufacturer {
     public String getCountry() {
         return country;
     }
+
+    @Override
+    public String toString() {
+        return "Id: " + id + " Name: " + name + " Country: " + country;
+    }
 }

@@ -36,9 +36,9 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
     @Override
     public Optional<Manufacturer> get(Long id) {
         Manufacturer manufacturer = null;
-        String query = "SELECT * FROM manufacturers WHERE 'id' =?;";
+        String query = "SELECT * FROM manufacturers WHERE id =?;";
         try (Connection connection = MYSQL_ConnectionUtils.getConnection()) {
-            PreparedStatement getManufacturerStatement = connection.prepareStatement(query);
+            PreparedStatement getManufacturerStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             getManufacturerStatement.setLong(1,id);
             ResultSet resultSet = getManufacturerStatement.executeQuery();
             if(resultSet.next()) {
