@@ -7,3 +7,5 @@ CREATE TABLE `taxiservicedb`.`manufacturers` (
     PRIMARY KEY (`id`))
     ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+INSERT INTO manufacturers (name, country) VALUES ('Toyota','Japan');
+INSERT INTO manufacturers (name, country) VALUES ('Mazda','Japan');
